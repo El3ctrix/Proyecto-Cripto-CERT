@@ -1,4 +1,5 @@
 from Crypto.Cipher import AES
+import os
 from os import remove
 from os import listdir
 from os.path import isfile, join
@@ -9,8 +10,8 @@ def decrypt(encrypted_data):
     
 
 def main():
-    key = open("C:\Users\hdext\OneDrive\Escritorio\key.bin", "rb").read()
-    mypath = r"C:\Users\hdext\OneDrive\Documentos"
+    key = open(os.environ["HOME"] + "\Desktop\key.bin", "rb").read()
+    mypath = r"{}\Documents".format(format(os.environ['HOME']))
     files = []
     for f in listdir(mypath):
         file = join(mypath, f)

